@@ -30,12 +30,10 @@ Port ${SSHD_PORT:-22222}
 LogLevel VERBOSE
 
 # Authentication:
-
-#LoginGraceTime 2m
 PermitRootLogin no
-#StrictModes yes
-#MaxAuthTries 6
-#MaxSessions 10
+
+# We set StrictModes to no, as some of our config will come from config maps or secrets.
+StrictModes no
 
 #PubkeyAuthentication yes
 
