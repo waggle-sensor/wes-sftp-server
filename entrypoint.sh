@@ -14,10 +14,9 @@ cat > /etc/ssh/sshd_config <<EOF
 
 Include /etc/ssh/sshd_config.d/*.conf
 
-Port 22222
+ListenAddress ${SSHD_HOST:-0.0.0.0}
+Port ${SSHD_PORT:-22222}
 #AddressFamily any
-#ListenAddress 0.0.0.0
-#ListenAddress ::
 
 #HostKey /etc/ssh/ssh_host_rsa_key
 #HostKey /etc/ssh/ssh_host_ecdsa_key
